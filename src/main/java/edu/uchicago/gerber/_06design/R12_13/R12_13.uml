@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.uchicago.gerber._06design.R12_13</OriginalElement>
+  <nodes>
+    <node x="794.8812075874625" y="314.05009513313115">edu.uchicago.gerber._06design.R12_13.Inventory</node>
+    <node x="171.65136901578427" y="354.64716217579553">edu.uchicago.gerber._06design.R12_13.Coin</node>
+    <node x="790.1519656249611" y="128.4830824532366">edu.uchicago.gerber._06design.R12_13.Product</node>
+    <node x="-90.10137842779963" y="329.8721126249805">edu.uchicago.gerber._06design.R12_13.ChangeDispenser</node>
+    <node x="478.5213994474502" y="308.7556286743832">edu.uchicago.gerber._06design.R12_13.UserInterface</node>
+    <node x="152.15692409118338" y="-13.047795937051319">edu.uchicago.gerber._06design.R12_13.VendingMachine</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_13.VendingMachine" target="edu.uchicago.gerber._06design.R12_13.ChangeDispenser" relationship="TO_ONE">
+      <point x="-133.0" y="0.0" />
+      <point x="5.398621572200369" y="124.45220406294868" />
+      <point x="0.0" y="-49.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_13.VendingMachine" target="edu.uchicago.gerber._06design.R12_13.Inventory" relationship="TO_ONE">
+      <point x="133.0" y="-13.46912160971209" />
+      <point x="934.3812075874625" y="110.98308245323659" />
+      <point x="0.0" y="-82.5" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_13.VendingMachine" target="edu.uchicago.gerber._06design.R12_13.Coin" relationship="TO_MANY">
+      <point x="-63.005555075399116" y="137.5" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_13.UserInterface" target="edu.uchicago.gerber._06design.R12_13.VendingMachine" relationship="TO_ONE">
+      <point x="-126.0" y="0.0" />
+      <point x="290.15136901578427" y="413.2556286743832" />
+      <point x="4.994444924600884" y="137.5" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_13.Inventory" target="edu.uchicago.gerber._06design.R12_13.Product" relationship="TO_MANY">
+      <point x="-81.72924196250142" y="-82.5" />
+      <point x="0.0" y="60.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8418017268269337" showDependencies="true" x="518.666374206543" y="302.2481117719486" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

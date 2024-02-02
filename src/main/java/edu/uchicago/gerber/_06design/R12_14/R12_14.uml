@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.uchicago.gerber._06design.R12_14</OriginalElement>
+  <nodes>
+    <node x="440.5643310546875" y="129.18559773763025">edu.uchicago.gerber._06design.R12_14.PayrollCalculator</node>
+    <node x="219.29946899414057" y="86.84649658203125">edu.uchicago.gerber._06design.R12_14.Paycheck</node>
+    <node x="-87.0" y="-14.0">edu.uchicago.gerber._06design.R12_14.Employee</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_14.Employee" target="edu.uchicago.gerber._06design.R12_14.PayrollCalculator" relationship="CREATE">
+      <point x="116.5" y="-111.0" />
+      <point x="560.5643310546875" y="23.5" />
+      <point x="0.0" y="-60.5" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_14.Employee" target="edu.uchicago.gerber._06design.R12_14.Paycheck" relationship="CREATE">
+      <point x="116.5" y="0.0" />
+      <point x="161.0" y="134.5" />
+      <point x="161.0" y="180.34649658203125" />
+      <point x="-102.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.1778435436910653" showDependencies="true" x="241.2646331787107" y="109.94609069824219" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

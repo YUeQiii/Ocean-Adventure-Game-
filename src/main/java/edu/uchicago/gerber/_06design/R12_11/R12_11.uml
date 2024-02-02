@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.uchicago.gerber._06design.R12_11</OriginalElement>
+  <nodes>
+    <node x="-12.26387396835284" y="123.11268939586384">edu.uchicago.gerber._06design.R12_11.Country</node>
+    <node x="-93.16344970807495" y="-13.909407099586062">edu.uchicago.gerber._06design.R12_11.CountryFileReader</node>
+    <node x="285.3771276181057" y="126.56950584923578">edu.uchicago.gerber._06design.R12_11.CountryStatistics</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_11.CountryStatistics" target="edu.uchicago.gerber._06design.R12_11.Country" relationship="TO_MANY">
+      <point x="-176.0" y="40.54318354662806" />
+      <point x="117.5" y="0.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_11.CountryFileReader" target="edu.uchicago.gerber._06design.R12_11.Country" relationship="CREATE">
+      <point x="35.89957573972211" y="38.0" />
+      <point x="0.0" y="-115.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9640297493397444" showDependencies="true" x="210.65069892102224" y="238.8767008827999" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

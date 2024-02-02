@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.uchicago.gerber._06design.R12_15</OriginalElement>
+  <nodes>
+    <node x="-60.25686053184667" y="-13.776841497038795">edu.uchicago.gerber._06design.R12_15.Customer</node>
+    <node x="401.5270298742248" y="298.2514361571106">edu.uchicago.gerber._06design.R12_15.Invoice</node>
+    <node x="9.084035197236929" y="220.6010178672949">edu.uchicago.gerber._06design.R12_15.Address</node>
+    <node x="215.99217138358574" y="292.36668166160626">edu.uchicago.gerber._06design.R12_15.Product</node>
+    <node x="2.380634482012937" y="432.9780201918161">edu.uchicago.gerber._06design.R12_15.Item</node>
+    <node x="211.10646323186336" y="155.29466508597227">edu.uchicago.gerber._06design.R12_15.Payment</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Customer" relationship="TO_ONE">
+      <point x="14.999970125775235" y="-104.5" />
+      <point x="529.027" y="31.223" />
+      <point x="102.00000000000001" y="-15.000158502961206" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="TO_ONE">
+      <point x="101.99986053184666" y="-1.5850296120589746E-4" />
+      <point x="411.0" y="46.223" />
+      <point x="411.0" y="262.0" />
+      <point x="193.606" y="262.0" />
+      <point x="193.606" y="223.795" />
+      <point x="69.99996480276307" y="-67.80601786729491" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="TO_ONE">
+      <point x="-2.9874224765080726E-5" y="-104.50043615711064" />
+      <point x="514.027" y="262.0" />
+      <point x="193.606" y="262.0" />
+      <point x="193.606" y="223.795" />
+      <point x="69.99996480276307" y="-67.80601786729491" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Item" relationship="TO_MANY">
+      <point x="-112.5" y="94.22658403470547" />
+      <point x="74.0" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Item" target="edu.uchicago.gerber._06design.R12_15.Product" relationship="TO_ONE">
+      <point x="74.0" y="0.0" />
+      <point x="278.49217138358574" y="481.9780201918161" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Payment" relationship="TO_MANY">
+      <point x="-15.000029874224765" y="-104.5" />
+      <point x="499.02700000000004" y="193.29466508597227" />
+      <point x="70.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9815616134744191" showDependencies="true" x="260.93722606845307" y="320.87629578085625" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

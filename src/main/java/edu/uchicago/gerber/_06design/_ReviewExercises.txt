@@ -1,0 +1,172 @@
+#########################################################################
+# Use this file to answer Review Exercises from the Big Java textbook
+#########################################################################
+
+R12.1 OO Analysis and Design
+(1) Discover classes: Highlight the nouns in the problem description. Make a list of the nouns. Cross out those that don't
+seem to be reasonable candidates for classes.
+(2) Discover responsibilities: Make a list of the major tasks that your system needs to fulfill. From those tasks, pick one that is not trivial and that is
+intuitive to you. Find a class that is responsible for carrying out that task. Make an index card and write the name and the
+task on it. Now ask yourself how an object of the class can carry out the task. It probably needs help from other objects.
+Then make CRC cards for the classes to which those objects belong and write the responsibilities on them.
+(3) Describe relationships: Make a class diagram that shows the relationships between all the classes that you discovered.
+Start with inheritance_the is-a relationship between classes. Is any class a specialization of another? If a class is a
+specialization of another, draw inheritance arrows.
+The “collaborators” column of the CRC card tells you which classes are used by that class. Draw dependency arrows for
+the collaborators on the CRC cards. Some dependency relationships give rise to aggregations. For each of the dependency
+relationships, if the object navigates to its collaborator directly because it stores a reference, draw an aggregation arrow.
+Or if the collaborator is a method parameter variable or return value, then simply draw a dependency arrow.
+
+#########################################################################
+
+R12.2 OO Analysis and Design
+(1) One simple approach for discovering classes and methods is to look for the nouns and verbs in the requirement specification.
+Often, nouns correspond to classes, and verbs correspond to methods.
+(2) Then to keep a list of candidate classes on a whiteboard or a sheet of paper. As you brainstorm, simply put all ideas
+for classes onto the list. You can always cross out the ones that aren’t useful after all.
+(3) In general, concepts from the problem domain often make good classes.
+(4) Not all classes can be discovered from the program requirements. Most complex programs need classes for tactical purposes,
+such as file or database access, user interfaces, control mechanisms, and so on.
+(5) Some of the classes that you need may already exist, either in the standard library or in a program that you developed
+previously. You also may be able to use inheritance to extend existing classes into classes that match your needs.
+
+#########################################################################
+
+R12.3 OO Analysis and Design
+(1) A simple rule for finding these methods is to look for verbs in the task description, then match the verbs to the appropriate
+objects.
+(2) Then you need to figure out which class is responsible for this method.
+(3) Use the "CRC card method"("classes", "responsibilities","collaborators"),In its simplest form, the method works as follows:
+a. Use an index card for each class. As you think about verbs in the task description that indicate methods, you pick the card
+of the class that you think should be responsible, and write that responsibility on the card.
+b. For each responsibility, you record which other classes are needed to fulfill it. Those classes are the collaborators.
+If a class can carry out that responsibility by itself, do nothing further. But if the class needs the help of other classes,
+write the names of these collaborators on the right-hand side of the card.
+
+#########################################################################
+
+R12.8 Relationships
+Write CRC cards for the Coin and CashRegister classes described in Section 12.1.3
+
+Coin
+Responsibilities:
+- Know value
+- Provide value
+#################
+Collaborators:
+- CashRegister
+
+CashRegister
+Responsibilities:
+- Hold coins
+- Add coin
+- Compute total value
+- (Optional) Return change
+- (Optional) Clear register
+############################
+Collaborators:
+- Coin
+
+#########################################################################
+
+R12.9 CRC Quiz
+Write CRC cards for the Quiz and Question classes in Section 12.2.2.
+'Quiz' contains multiple 'Question' objects, but those 'Question' objects can exist independently of a 'Quiz'.
+
+Question
+Responsibilities:
+- Hold question text
+- Hold answer choices
+- Hold correct answer
+- Validate an answer
+- Display itself
+############################
+Collaborators:
+- Quiz
+
+Quiz
+Responsibilities:
+- Hold collection of Questions
+- Add Question
+- Remove Question
+- Track current Question
+- Score quiz
+- Navigate Questions
+############################
+Collaborators:
+- Question(contains)
+
+The relationship between Question and Quiz is aggregation.The 'Quiz' class doesn't need to know the details of how questions
+validate answers or display themselves; it just needs to manage the collection of questions.
+
+#########################################################################
+
+R12.10 UML Quiz
+Draw a UML diagram for the Quiz, Question, and ChoiceQuestion classes.
+src/main/java/edu/uchicago/gerber/_06design/R12_10/R12_10.uml
+
+#########################################################################
+
+R12.11 CRC Cards
+Classes: Country, CountryStatistic and CountryFileReader
+Methods:
+Country.getPopulationDensity(): Calculate the population density
+CountryStatistic.getCountryByLargestArea():Find the country with the largest area
+CountryStatistic.getCountryByLargestPopulation():Find the country with the largest population
+CountryStatistic.getCountryByLargestPopulationDensity():Find the country with the largest population density
+CountryFileReader.readCountriesFromFile(String filename): Read the file containing country records and parse each record into a 'Country' object
+
+
+CRC card for Country:
+Country
+Responsibilities:
+- Hold the data about the country's name, population, and area
+- Calculate the population density
+######################
+Collaborators:
+CountryStatistics
+
+CRC card for CountryStatistics:
+CountryStatistics
+Responsibilities:
+- Read data from a file and create 'Country' objects
+- Find the country with the largest area
+- Find the country with the largest population
+- Find the country with the largest population density
+######################
+Collaborators:
+Country
+CountryFileReader
+
+CRC card for CountryFileReader
+CountryFileReader
+Responsibilities:
+- Read the file containing country records
+- Parse each record into a 'Country' object
+Collaborators:
+Country
+
+UML diagram: src/main/java/edu/uchicago/gerber/_06design/R12_11/R12_11.uml
+
+#########################################################################
+
+R12.13 UML Diagram
+Classes: Coin, Product, Inventory, VendingMachine, ChangeDispenser, UserInterface
+src/main/java/edu/uchicago/gerber/_06design/R12_13/R12_13.uml
+
+#########################################################################
+
+R12.14 UML Diagram
+Classes: Employee, Paycheck, PayrollSystem
+src/main/java/edu/uchicago/gerber/_06design/R12_14/R12_14.uml
+
+
+#########################################################################
+
+R12.15 ULM Diagram
+Classes: Address, Customer, Invoice, Item, Payment, Product
+src/main/java/edu/uchicago/gerber/_06design/R12_15/R12_15.uml
+
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.uchicago.gerber._06design.R12_10</OriginalElement>
+  <nodes>
+    <node x="-54.0563838463525" y="-18.616241052691123">edu.uchicago.gerber._06design.R12_10.Question</node>
+    <node x="199.41212354644796" y="264.0656697090077">edu.uchicago.gerber._06design.R12_10.ChoiceQuestion</node>
+    <node x="-83.71601061916954" y="261.340191818457">edu.uchicago.gerber._06design.R12_10.Quiz</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_10.Quiz" target="edu.uchicago.gerber._06design.R12_10.Question" relationship="TO_MANY">
+      <point x="34.159626772817035" y="-71.5" />
+      <point x="-0.0" y="109.5" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_10.ChoiceQuestion" target="edu.uchicago.gerber._06design.R12_10.Question" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="322.41212354644796" y="90.88375894730888" />
+      <point x="115.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6850174517019684" showDependencies="true" x="361.9238586762672" y="182.80892023375338" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
