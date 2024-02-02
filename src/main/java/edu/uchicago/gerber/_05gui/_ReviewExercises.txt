@@ -1,0 +1,114 @@
+#########################################################################
+# Use this file to answer Review Exercises from the Big Java textbook
+#########################################################################
+
+R10.5 Events
+(1) An event object is a representation of an event that occurred either within an application or as a result of outside
+activity that the application needs to be aware of.
+
+(2) An event source is an object that generates or produces events. This object can be a GUI component (like a button or a
+text field), a software module, or even external sources like sensors.
+
+(3) An event listener is a function or method that "listens" for specific types of events to occur on event sources.
+When those events occur, the event listener executes some code in response.
+
+#########################################################################
+
+R10.6 actionPerformed
+
+(1) The 'actionPerformed' method is called by the AWT event dispatching system. When an action event occurs on a component,
+the system creates an 'ActionEvent' object to represent that event. This event object is then passed to the 'actionPerformed'
+method of any registered 'ActionListener' objects.
+
+(2) The call to the actionPerformed method occurs after a specific action event has been triggered on a GUI component
+with which the listener is registered.
+
+#########################################################################
+
+R10.11 Inner class and event-listeners
+(1) Inner classes can access the private fields and methods of the outer class. This capability is useful when the event
+handling code needs access to the outer class's state.
+
+(2) If an event listener is only relevant to a specific class and is not going to be reused elsewhere, defining it inside
+the class as an inner class can help in grouping the related functionality together.
+
+(3) Using an anonymous inner class for short and straightforward event-handling code directly within a method can be more concise.
+
+#########################################################################
+
+R10.14 Object hierarchies
+(1) 'append(String str)'': This method appends the given text to the document. It's specific to JTextArea and is commonly
+used to add text at the end of the area.
+
+(2) 'setSelectedText(String str)': This method sets the selected text in the text component.
+All descendants of JTextComponent, including JTextArea, JTextField, and JTextPane, inherit this method.
+
+(3) 'setToolTipText(String text)'': This method sets the text to be displayed when the cursor hovers over the component.
+All descendants of JComponent can inherit and use this method to provide tooltips for the user.
+
+
+#########################################################################
+
+R10.22 Graphic methods
+void drawItalianFlag(Graphics g, int xLeft, int yTop, int width, Color color1, Color color2)
+{
+    g.setColor(color1);
+    g.fillRect(xLeft, yTop, width / 3, width * 2 / 3);
+     g.setColor(color2);
+    g.fillRect(xLeft + 2 * width / 3, yTop, width / 3, width * 2 / 3);
+    g.drawLine(xLeft + width / 3, yTop, xLeft + width * 2 / 3, yTop);
+    g.drawLine(xLeft + width / 3, yTop + width * 2 / 3, xLeft + width * 2 / 3, yTop + width * 2 / 3);
+}
+
+
+#########################################################################
+
+R11.2 Layout managers
+
+Layout managers automatically adjust the size and position of components based on the window's size. This makes it
+easier to design responsive interfaces that look good across different screen resolutions and window sizes. What's more,
+different platforms might have different default sizes, margins, or styles for GUI components. Using a layout manager
+ensures your design remains consistent across multiple platforms. If you want to make changes to the GUI in the future,
+it's much easier when using a layout manager.
+
+#########################################################################
+
+R11.11 ButtonGroup
+Radio buttons are used when you want the user to select exactly one option from a set of options. Only one radio button
+in a group can be selected at a time.While check boxes are used when you want the user to select zero, one, or more options from a set of options. Each check box
+operates independently, allowing multiple selections.
+
+In summary, the inherent nature of radio buttons, where only one option should be selected at a time, necessitates the
+use of a button group to enforce this behavior. Check boxes, on the other hand, are designed to function independently,
+so there's no need for such a grouping mechanism.
+#########################################################################
+
+R11.19 Types of Events
+Both ActionEvent and MouseEvent are subclasses of the 'AWTEvent' class in Java's AWT and Swing event handling systems.
+In general, ActionEvent is more about the "what", while MouseEvent is more about the "how".
+While many user interactions can be captured using 'ActionEvent', more granular or specific mouse-related interactions require the use of MouseEvent.
+
+#########################################################################
+
+R11.20 Events
+ActionEvent objects are typically generated from an action on a GUI component, like pressing a button or selecting a menu item.
+MouseEvent objects carry information about mouse interactions with components.
+
+While the ActionEvent provides information related to a specific action on a GUI component, the MouseEvent gives detailed
+information about the nature of the mouse interaction, including coordinates, buttons involved, and click counts.
+
+#########################################################################
+
+R11.21 ActionListener versus MouseListener
+
+The difference in the number of methods between ActionListener and MouseListener is mainly due to the types of events
+they are designed to handle and the granularity of the interactions they aim to capture:
+
+(1) The ActionListener interface is primarily concerned with action events, which are higher-level, abstracted events
+that often result from direct user interaction with a GUI component. Therefore, a single 'actionPerformed' method is
+sufficient to handle such events.
+
+(2) The MouseListener interface deals with various mouse interactions, which are more granular and can encompass a range
+of activities. Given the different ways a user can interact with a component using a mouse, more methods are needed to
+accurately capture and handle these diverse events.
+
