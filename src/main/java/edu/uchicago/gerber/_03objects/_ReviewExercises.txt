@@ -1,0 +1,129 @@
+#########################################################################
+# Use this file to answer Review Exercises from the Big Java textbook
+#########################################################################
+
+
+R8.1 Encapsulation
+Encapsulation is one of the four fundamental Object-Oriented Programming (OOP) concepts.
+
+Encapsulation can be defined as the bundling of attributes and the methods (functions) that operate on the data
+into a single unit or class. It also restricts direct access to some of the object's components, which can prevent the
+accidental modification of data.
+
+Why is it useful?
+Encapsulation provides control over the data. What's more, the users of the class don't interact with class's internal
+workings directly, the class can be modified without affecting its consumers. This allows developers to optimize code,
+fix bugs, or make other improvements without breaking existing functionality. And for users, they don't need to know the
+intricate details of the class's internal workings to use it. Finally, by encapsulating and hiding data, the chance of
+unintended or harmful side effects is reduced, which leads to more robust and reliable software.
+
+#########################################################################
+
+R8.4 Public interface
+The public interface refers to the sets of methods, properties, and other members that are intended for external use or
+interaction with other objects. It defines how other classes or objects can communicate or use the given class.
+
+The implementation of a class is the internal working or code that actually performs the tasks. It contains the detailed
+process, algorithms, and data handling procedures which are often hidden from the external user.
+
+Difference:
+The public interface shows what a class can do without exposing how it does it like a contract.
+The implementation is the actual code that fulfills this contract.
+In OOP, you can change the implementation without changing the interface, ensuring consistent behavior and interaction for
+other objects that use the class.
+
+#########################################################################
+
+R8.7 Instance versus static
+An instance method is associated with an instance object of the class. It can access and modify instance-specific attributes
+and call other instance methods. It's called on an instance objects of class ,and it can access both instance variables and
+static variables. It is typically used for tasked that require access to instance-specific data.
+
+A static method belongs to the class rather than any specific instance. It cannot access or modify class instance variables
+unless they are passed as arguments. Often, they perform a task that doesn't require access to instance-specific data.
+It's called on the class itself, not on the instance. It can access only static variables. It is often used for functions
+or tasks that aren't tied to the state of an instance.
+
+Difference: An instance method operates in the context of an objects, allowing it to access and modify that object's attributes.
+A static method operates in the context of the class, and thus doesn't have access to instance-specific attributes or methods
+unless explicitly passed.
+
+#########################################################################
+
+R8.8 Mutator and accessor
+Mutator method is used to set or modify the value of a private instance variable.
+While accessor method is used to retrieve the value of a private instance variable without modifying it.
+
+
+#########################################################################
+
+R8.9 Implicit parameter
+An implicit parameter and an explicit parameter refer to how parameters are provided to a method and how they are provided
+to a method and how they're used inside that method.
+
+In Java, there is no implicit parameter in the list of parameters when you call a method, but it's always available
+to you inside the method. While the explicit parameter is explicitly listed between the parentheses both in the method declaration
+and in the method call.
+
+#########################################################################
+
+R8.10 Implicit parameter
+1. Implicit parameters for an instance method:
+An instance method has exactly one implicit parameter: the object on which the method is called.
+In Java, this is referenced using the keyword 'this'.
+
+2. Implicit parameters for a static method:
+A static method has zero implicit parameter: a static method does not have an implicit parameter referencing an instance
+of the object because static methods belong to the class itself.
+
+3. Explicit parameters for an instance method：
+An instance method can have zero to many explicit parameters. The exact number depends on the method's definition.
+
+#########################################################################
+
+R8.12 Constructors
+A class can have multiple constructors, as long as they have different parameter lists. The constructors must differ
+either in the number of parameters or in the type of parameters. This is known as constructor overloading.
+
+Can you have a class with no constructors?
+Yes. In Java, if you don't provide any constructor, the compiler will automatically provide a default constructor (with no parameters)
+that initializes the object.
+
+The constructor that gets called is determined by the arguments you provide when you instantiate the class. The constructor
+with a parameter list that matches the provided argument is the one that's called.
+
+#########################################################################
+
+R8.16 Instance variables
+
+#########################################################################
+If someone has access to the source code of the class, they can see the private variables. So "private" doesn't mean hiding
+anything from someone reading the source code. The main purpose of "private" is to encapsulate the internal representation
+of the class. When an instance variable is declared as "private", it means that it cannot be accessed or modified from
+outside the class. Only methods within the class can access or modify these variables, which prevents external entities
+(like other classes)from inadvertently changing the internal state of the instance object in ways that the class designer didn't intend.
+
+R8.19 The 'this' reference
+In Java, 'this' reference is a keyword that refers to the current instance of the class. It's used inside the methods and
+constructors of a class to refer to the current object on which the method or constructor is being invoked.
+
+Why you might use the 'this' reference:
+1. Distinguish between instance variables and parameters when method parameters or constructor parameters have the same name
+as instance variables.
+2. Method chaining: some methods return the current instance of the object, and you can chain method calls.
+3. Passing the current instance as an argument
+4. Invoke overload constructors: within a constructor, the 'this' knyword can be used to call another overload constructor in
+the same class.
+
+#########################################################################
+
+R8.20 Zero, null, false, empty String
+Zero('0') is a numeric value.
+'null' indicated the absence of a reference value pointing to any memory location or object. Attempting to invoke methods
+or access fields on a null reference will result in a 'NullPointerException' in Java.
+'false' is a boolean value indicating a negative logical state.
+'""' is a valid, though empty, 'String' object.
+These can't be used interchangeably in Java.
+
+
+
