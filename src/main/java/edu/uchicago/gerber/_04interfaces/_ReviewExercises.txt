@@ -1,0 +1,177 @@
+#########################################################################
+# Use this file to answer Review Exercises from the Big Java textbook
+#########################################################################
+
+
+R9.1 Superclas and subclass
+For each pair, the superclass is the more general class, while the subclass is the more specific class.
+
+a.
+Superclass: Employee
+Subclass: Manager
+
+b.
+Superclass: Student
+Subclass: GraduateStudent
+
+c.
+Superclass: Person
+Subclass: Student
+
+d.
+Superclass: Employee
+Subclass: Professor
+
+e.
+Superclass: BankAccount
+Subclass: CheckingAccount
+
+f.
+Superclass: Vehicle
+Subclass: Car
+
+g.
+Superclass: Vehicle
+Subclass: Minivan
+
+h.
+Superclass: Car
+Subclass: Minivan
+
+i.
+Superclass: Vehicle
+Subclass: Truck
+
+#########################################################################
+
+R9.2 superclass and subclass
+
+Firstly, the difference between many small appliances is very small. Thus, differentiating them into separate subclasses
+might lead to redundant code. What's more, as the inventory grows and more products are introduced, for every new type
+of small appliance, a new subclass would need to be created. This can become cumbersome and is not scalable. Finally,
+considering the inheritance issues, true object-oriented inheritance implies an "is-a" relationship. While a toaster
+"is-a" small appliance, the attributes and methods that differentiate a toaster from other small appliances might not be
+substantial enough to justify a full subclass.
+
+#########################################################################
+
+R9.4 SavingsAccount
+
+Which methods does the SavingsAccount class in How To 9.1 inherit from its superclass?
+deposit()
+getBalance()
+
+Which methods does it override?
+withdraw()
+monthEnd()
+
+Which methods does it add?
+setInterestRate()
+
+#########################################################################
+
+R9.6 Sandwich
+
+a. x = y; // Legal
+you can assign an instance of a subclass (Sub) to a reference variable of the superclass (Sandwich).
+
+c. y = new Sandwich(); // Legal
+you can assign an instance of the superclass (Sandwich) to a reference variable of the subclass (Sub).
+
+d. x = new Sub(); // Legal
+you can assign an instance of a subclass (Sub) to a reference variable of the superclass (Sandwich).
+
+b. y = x; // Not legal
+you cannot assign an instance of the superclass (x) to a reference variable of the subclass (y) without casting.
+If you want to assign x to y, you would need to use a cast like this: y = (Sub) x.
+
+#########################################################################
+
+R9.7 Inheretence -use the UML diagram tool in IntelliJ and indicate to the grader where uml file is located
+edu/uchicago/gerber/_04interfaces/P0_3/R9_7/R9_7.uml
+
+
+R9.8 Inheretence -use the UML diagram tool in IntelliJ and indicate to the grader where uml file is located
+edu/uchicago/gerber/_04interfaces/P0_3/R9_8/R9_8.uml
+
+R9.9 Inheretence -use the UML diagram tool in IntelliJ and indicate to the grader where uml file is located
+edu/uchicago/gerber/_04interfaces/P0_3/R9_9/R9_9.uml
+
+#########################################################################
+
+R9.10 Casting
+
+Casting to BankAccount is a reference type cast.
+If the cast is performed in a context where the runtime type of the object referenced by x is not a BankAccount or a
+subclass of BankAccount, a ClassCastException will be thrown at runtime. What's more, casting from one reference type to
+another doesn't modify the underlying object. It just allows you to treat that object as an instance of another type.
+Therefore, casting reference types like 'BankAccount' is about ensuring the object is of a certain type or can be treated
+as an instance of that type.
+
+Casting to a type like int is a primitive type cast.
+When you cast from one primitive type to another, the value might actually change. For instance, casting a double to an
+int will truncate the decimal part.There's a risk of data loss when casting between primitives.
+Therefore, casting primitive types like int involves potentially changing the data or its representation.
+
+#########################################################################
+
+R9.11 instanceof operator
+
+based on Java's standard library documentation, PrintStream is a direct subclass of the FilterOutputStream class,
+FilterOutputStream is a direct subclass of the OutputStream class, and PrintStream implements the Appendable and Closeable interfaces.
+
+a. System.out instanceof PrintStream:
+True. System.out is an instance of PrintStream.
+
+b. System.out instanceof OutputStream:
+True. PrintStream is a subclass of FilterOutputStream and FilterOutputStream is a direct subclass of OutputStream Class.
+
+c. System.out instanceof LogStream:
+False. LogStream is not related to PrintStream. And there's no class named LogStream in the standard Java library in Java 8.
+
+d. System.out instanceof Object:
+True. All Java objects are instances of Object through inheritance.
+
+e. System.out instanceof Closeable:
+True. PrintStream implements the Closeable interface.
+
+f. System.out instanceof Writer:
+False. Writer is an abstract class for character streams, whereas PrintStream and its ancestors deal with byte streams. So
+Writer is not related to PrintStream.
+
+
+#########################################################################
+
+R9.14 Edible interface
+
+a. e = sub;
+This is legal. sub is of type Sandwich, and if Sandwich implements Edible, then you can assign an instance of Sandwich
+to a variable of type Edible.
+
+b. sub = e;
+This is not legal. e is of type Edible, and while it could reference a Sandwich, it might also reference any other object that implements Edible. Without a cast, this would not compile.
+
+c. sub = (Sandwich) e;
+This is legal. e is explicitly cast to be of type Sandwich. As long as the runtime object that e references is indeed a Sandwich, this will not cause a runtime error.
+
+d. sub = (Sandwich) cerealBox;
+This is not legal. cerealBox is of type Rectangle. Therefore, this would result in a runtime exception (ClassCastException).
+However, it would compile because you're explicitly casting it.
+
+e. e = cerealBox;
+This is not legal. There's no indication that Rectangle implements Edible, so this wouldn't compile.
+
+f. e = (Edible) cerealBox;
+This is not legal. You're trying to cast cerealBox, which is a Rectangle, to Edible. Unless Rectangle implements Edible, this would result in a runtime exception.
+But the code would compile because of the explicit cast.
+
+g. e = (Rectangle) cerealBox;
+This is not legal. Even though cerealBox is indeed a Rectangle, the type of variable e is Edible. This means you can't assign a Rectangle to it, so it wouldn't compile.
+
+h. e = (Rectangle) null;
+This is legal. Any reference type can be assigned the value null, and you can also cast null to any reference type.
+Also, null can be assigned to any object without needing a cast. So the cast is redundant.
+
+
+
+
