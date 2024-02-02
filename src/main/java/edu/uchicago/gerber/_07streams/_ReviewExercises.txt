@@ -1,0 +1,200 @@
+#########################################################################
+# Use this file to answer Review Exercises from the Big Java textbook
+#########################################################################
+
+
+R13.1 Terms
+a. Recursion: Recursion is a programming concept where a function calls itself to solve a smaller instance of the same
+problem. Each recursive call has its own execution context,
+and the function typically has a base case to terminate the recursive calls.
+
+b. Iteration: Iteration refers to the process of repeating a set of instructions a specified number of times or until a
+specific condition is met. Iteration is used to traverse or process collections like arrays or lists, perform repeated operations, etc.
+
+c. Infinite Recursion: Infinite recursion occurs when the recursive calls in a function never reach a base case, causing
+the function to call itself indefinitely. This usually leads to a stack overflow error because each recursive call consumes
+a portion of the stack memory and infinite calls will eventually exhaust all available memory.
+
+d. Recursive Helper Method: A recursive helper method is a technique used in recursion, especially when additional
+parameters are needed to perform the recursive computation. It's a secondary function that assists the primary recursive
+function by handling extra state or parameters. The primary function typically initializes the necessary parameters and
+then calls the helper method to carry out the recursive logic. This approach helps to keep the recursive logic clean and maintainable.
+
+#########################################################################
+
+R13.2 Smallest value
+(1) Define a recursive function, say findMin, that takes an array and its size as parameters. If you're using a language
+that supports default parameters or overloading, you might also define a helper function or use optional parameters.
+
+(2) Determine the base case for the recursion. The simplest case could be when the array size is 1. In this case, the
+function should return the only element in the array as it is the smallest by default.
+
+(3) For the case where the array size is greater than 1, the function should compare the first element of the array with
+the result of a recursive call to findMin with the rest of the array. This can be done by either creating a sub-array
+excluding the first element or by passing a modified index range.
+
+(4) The function should return the smaller value between the first element and the result obtained from the recursive call.
+
+(5)  Ensure that edge cases like an empty array are handled appropriately, usually by returning an indication that no
+minimum value can be determined.
+
+(6) Ensure that each recursive call reduces the problem size, moving towards the base case, to prevent infinite recursion.
+
+#########################################################################
+
+R13.4 Sort array of numbers
+(1) Define a recursive function, say recursiveSort, that takes an array (or a portion of it) as its parameter. You may
+also need parameters to track the current index or range of elements being considered for sorting.
+
+(2) The base case for the recursion is when the array or the sub-array has reached a size where it is inherently sorted,
+typically when it has 0 or 1 element. In this case, the function simply returns because no sorting is needed.
+
+(3)  For each recursive call, find the smallest element in the current range of the array. This can be done using a
+separate recursive function that scans the array and returns the index of the smallest element.
+
+(4) Swap the smallest element found with the first element of the current range. This ensures that the smallest element
+is positioned in its correct sorted place.
+
+(5) Make a recursive call to recursiveSort with the remaining part of the array, excluding the part that has already
+been sorted.
+
+(6) With each recursive call, the unsorted portion of the array reduces, moving the algorithm towards the base case.
+This progression is crucial to avoid infinite recursion. Continue the process of finding the smallest element, swapping,
+and making recursive calls until the base case is reached for the entire array. At this point, the entire array will be sorted.
+
+(7) Handle edge cases such as an empty array or an array with only one element at the beginning of your function.
+
+#########################################################################
+
+R13.6 Exponents recursively
+
+(1) Base Case: The recursion terminates when n=0. In this case, x^0 is defined as 1, regardless of the value of x
+
+(2) Recursive Step: To compute x^n, you can use the value of x^(n-1). Specifically, x^n can be computed as x*x^(n-1).
+This step reduces the problem to a smaller instance of the same problem.
+
+(3) Recursive Definition: The recursive definition can be expressed as follows:
+· if n=0, then x^n =1
+· if n>0, then x^n=x*x^(n-1)
+
+#########################################################################
+
+R13.8 Factorial recursively
+
+To define n! recursively, similar to the recursive approach used for Fibonacci numbers, we can follow these steps:
+(1) Base Case: The recursion terminates when n=0 or n=1. In this case, 0!=1 and 1!=1 by definition
+
+(2) Recursive Step: To compute n!, you can use the value of (n-1)!. Specifically, n! can be computed as n*(n-1)!. This
+step reduces the problem to a smaller instance of the same problem.
+
+(3) Recursive Definition: The recursive definition can be expressed as follows:
+· if n=0 or n=1, then n! =1
+· if n>1, then n! = n*(n-1)!
+
+#########################################################################
+
+R19.1 operations on Stream<String>
+a. long count = stream.filter(s -> s.startsWith("a")).count();
+
+b. long count = stream.filter(s -> s.startsWith("a") && s.length() > 10).count();
+
+c. boolean atLeast100 = stream.filter(s -> s.startsWith("a")).limit(100).count() == 100;
+
+#########################################################################
+
+R19.3 How to read Java8
+(1) words.filter(w -> w.length() > 10).limit(100).count()
+
+Filter First: This expression first filters the words stream to include only those words with a length greater than 10.
+
+Limit After Filtering: After filtering, it limits the resulting stream to the first 100 elements.
+
+Count: Finally, it counts how many words are in this limited stream.
+
+Result: The result is the count of up to 100 words that are longer than 10 characters. If there are fewer than 100 such
+words, it will count all of them.
+
+(2) words.limit(100).filter(w -> w.length() > 10).count()
+
+Limit First: This expression first limits the words stream to the first 100 elements, regardless of their length.
+
+Filter After Limiting: It then filters these 100 elements, keeping only those with a length greater than 10.
+
+Count: Finally, it counts the number of words that passed the filter.
+
+Result: The result is the count of words longer than 10 characters among the first 100 words. The total count could be
+less than 100, depending on how many of the first 100 words meet the length criterion.
+
+The key difference lies in when the 'limit' operation is applied. In the first expression, 'limit' is applied after filtering,
+so it potentially looks through the entire stream to find up to 100 words that are longer than 10 characters. In the second
+expression, 'limit' is applied before filtering, so it only considers the length of the first 100 words in the stream,
+regardless of how many words are in the entire stream. This can lead to a different count being returned by each expression.
+
+#########################################################################
+
+R19.6 Transforming values
+(1) To convert a Stream<Double> into a Stream<String>, where each Double value is turned into its equivalent String
+representation, you can use the map function of the Stream API in Java. The map function applies a given function to each
+element of the stream and returns a stream consisting of the results.
+
+Stream<Double> doubleStream = // your Stream<Double>;
+Stream<String> stringStream = doubleStream.map(Object::toString);
+Object::toString is a method reference that calls the toString method on each Double object in the stream, converting it to a String.
+
+(2) To convert it back into a Stream<Double>, you can again use the map function, but this time you will need to parse the
+
+Stream<String> stringStream = // your Stream<String>;
+Stream<Double> doubleStream = stringStream.map(Double::parseDouble);
+Double::parseDouble is a method reference that calls the parseDouble method on the Double class, converting each String in the stream back into a Double.
+
+When converting back to Double, if any of the strings are not valid representations of a double value,
+Double.parseDouble will throw a NumberFormatException. You might want to handle this exception or filter out non-parsable strings.
+
+#########################################################################
+
+R19.11 Terminal operations
+
+# List all terminal operations on object streams and primitive-type streams that have been discussed in this chapter.
+
+Methods such as 'count' and 'findFirst' are terminal operations.
+A terminal operation forces the execution of all pending lazy operations and yields a value that is not a stream.
+
+Object streams：
+(1) 'toArray()': Yields an array:
+stream.toArray(T[]::new)
+(2) 'collect()': you can gather elements into a collection:
+stream.collect(Collectors.toList())
+stream.collect(Collectors.toSet())
+stream.collect(Collectors.joining(", ")
+stream.collect(Collectors.groupingBy(keyFunction, collector))
+(3) 'findFirst()'
+(4) 'findAny()'
+(5) 'max()', 'min()'
+(6) 'forEach()'
+(7) Three terminal operations that return a boolean value, to test whether all, any, or no stream elements match a condition:
+'allMatch()' 'anyMatch()' ' noneMatch()'
+
+Primitive-type streams：
+(1) 'count()'
+(2) 'findFist()'
+(3) 'findAny()'
+(4) 'max()','min()','sum()', 'average()'
+(5) 'allMatch()','anyMatch()', 'noneMatch()'
+(6) 'forEach()'
+
+#########################################################################
+
+R19.12 Collectors
+
+# List all collectors that were introduced in this chapter.
+cCollectors implementations are commonly used with the collect() terminal operation of the Stream API.
+(1) 'groupingBy()'
+(2) 'toSet()'，'toList()', ''
+(3) 'counting()'
+(4) 'maxBy()'
+(5) 'joining(", ")
+
+
+
+
+
